@@ -47,5 +47,5 @@ async def predict(audio: UploadFile = File(...)):
             os.remove(temp_path)
 
 # Uncomment this if running locally
-if __name__ == "__main__":
-     uvicorn.run(app, host="0.0.0.0", port=5000)
+#if __name__ == "__main__":
+    # uvicorn.run(app, host="0.0.0.0", port=5000)
