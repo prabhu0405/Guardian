@@ -8,7 +8,9 @@ from tensorflow.keras.models import load_model
 import os
 import tempfile
 
-app = FastAPI(title="Audio Alert Detection API", version="1.0.0")
+app = FastAPI()
+
+    # title="Audio Alert Detection API", version="1.0.0"
 
 # Load models (these will be loaded once when the function starts)
 svm_model = joblib.load("svm_model.pkl")
