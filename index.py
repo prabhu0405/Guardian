@@ -1,10 +1,10 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
+from mangum import Mangum  # ✅ required for Vercel
 import librosa
 import numpy as np
 import joblib
 from tensorflow.keras.models import load_model
-import uvicorn
 import os
 
 app = FastAPI()
@@ -46,6 +46,5 @@ async def predict(audio: UploadFile = File(...)):
         if os.path.exists(temp_path):
             os.remove(temp_path)
 
-# Uncomment this if running locally
-#if __name__ == "__main__":
-    # uvicorn.run(app, host="0.0.0.0", port=5000)
+# ✅ Required for Vercel
+handler = Mangum(app)

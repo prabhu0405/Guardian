@@ -1,7 +1,7 @@
 fastapi
-uvicorn
 numpy
 librosa
 joblib
 tensorflow
 python-multipart
+magnum
